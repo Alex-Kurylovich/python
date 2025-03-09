@@ -1,4 +1,5 @@
 class SideBySideComparisons:
+
     def get_stairs(self, input):
         print("Bild steps for " + str(len(input)) + " " +  str(input))
         output = []
