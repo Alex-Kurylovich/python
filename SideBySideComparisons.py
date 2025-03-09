@@ -23,11 +23,9 @@ if __name__ == '__main__':
     my_stares = SideBySideComparisons()
 
     input1 = [1, 2, 3, 4, 5, 6]
-    # my_stares.get_stairs(input1)
     print("Steps " + str(my_stares.get_stairs(input1)))
 
     input2 = [1, 2, 3, 4, 5, 6, 7]
-    # my_stares.get_stairs(input2)
     print("Steps " + str(my_stares.get_stairs(input2)))
 
     input3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
