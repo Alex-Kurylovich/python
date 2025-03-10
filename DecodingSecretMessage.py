@@ -109,25 +109,11 @@ class DecodingSecretMessage:
         x_max += 1
         y_max += 1
         rows, cols = (y_max, x_max)
-        matrix = [[None] * cols] * rows
-        # matrix = [rows][cols]
-        # print(matrix)
-        # for i in range(len(grid_list)):
+        # matrix = [[None] * cols] * rows
+        matrix = [[None for i in range(cols)] for j in range(rows)]
+
         for g in grid_list:
             matrix[g.y][g.x] = g.c
-        #     matrix.append([])
-        #     for j in range(len(grid_list[i])):
-        #         matrix[i].append([])
-        #         matrix[i][j] = grid_list[i].c
-        # matrix = [][]
-        # String[ymax][xmax];
-        # for i in range(len(grid_list)):
-            # for g in grid_list:
-        #     # matrix[g.y][g.x] = g.c
-        #     matrix.append([])
-        #     for j in range(len(grid_list[i])):
-        #         matrix[i].append([])
-        #         matrix[i][j] = grid_list[i].c
         return matrix
 
     def print_matrix(self, matrix):
