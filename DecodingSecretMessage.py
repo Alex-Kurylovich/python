@@ -91,7 +91,7 @@ class DecodingSecretMessage:
         return grid_list
 
     def patch_with_unicode(self, grid):
-        print("patch_with_unicode GRID[]")
+        print("patch_with_unicode")
         for i in range(len(grid)):
             match i:
                 case 0 | 1 | 2:
@@ -109,7 +109,7 @@ class DecodingSecretMessage:
         x_max += 1
         y_max += 1
         rows, cols = (y_max, x_max)
-        matrix = [[0] * cols] * rows
+        matrix = [[None] * cols] * rows
         # matrix = [rows][cols]
         # print(matrix)
         # for i in range(len(grid_list)):
@@ -131,17 +131,16 @@ class DecodingSecretMessage:
         return matrix
 
     def print_matrix(self, matrix):
-        # print("print_matrix " + matrix)
-        # for sx in matrix:
-        #     print("\n")
-        #     for ch in sx:
-        #         str = ""
-        #         if ch != 0:
-        #             str = str + ch
-        #         else:
-        #             str = str + ' '
-        #         print(str)
-        print(matrix)
+        print("print_matrix")
+        for m in matrix:
+            print()
+            for ch in m:
+                str = ""
+                if ch != None:
+                    str = str + ch
+                else:
+                    str = str + ' '
+                print(str, end='')
 
 
 
