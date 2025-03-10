@@ -109,9 +109,7 @@ class DecodingSecretMessage:
         x_max += 1
         y_max += 1
         rows, cols = (y_max, x_max)
-        # matrix = [[None] * cols] * rows
         matrix = [[None for i in range(cols)] for j in range(rows)]
-
         for g in grid_list:
             matrix[g.y][g.x] = g.c
         return matrix
