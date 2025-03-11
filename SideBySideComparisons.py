@@ -1,7 +1,6 @@
 class SideBySideComparisons:
 
     def get_stairs(self, input):
-        print("Bild steps for " + str(len(input)) + " " +  str(input))
         output = []
         index = 0
         steps = 1
@@ -44,30 +43,30 @@ if __name__ == '__main__':
 
     my_stares = SideBySideComparisons()
 
+    input11 = [1, 2, 3, 4, 5, 6]
+    input22 = [1, 2, 3, 4, 5, 6, 7]
+    input33 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    print("Steps Input 1: " + str([1, 2, 3, 4, 5, 6]))
+    print("Steps Input 2: " + str([1, 2, 3, 4, 5, 6, 7]))
+    print("Steps Input 3: " + str([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+    print()
+
     print("my_stares")
-    input1 = [1, 2, 3, 4, 5, 6]
-    print("Steps " + str(my_stares.get_stairs(input1)))
-    input2 = [1, 2, 3, 4, 5, 6, 7]
-    print("Steps " + str(my_stares.get_stairs(input2)))
-    input3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    print("Steps " + str(my_stares.get_stairs(input3)))
+    print("Steps " + str(my_stares.get_stairs(input11)))
+    print("Steps " + str(my_stares.get_stairs(input22)))
+    print("Steps " + str(my_stares.get_stairs(input33)))
     print()
 
     print("create_staircase1")
-    input1 = [1, 2, 3, 4, 5, 6]
-    print("Steps " + str(my_stares.create_staircase1(input1)))
-    input2 = [1, 2, 3, 4, 5, 6, 7]
-    print("Steps " + str(my_stares.create_staircase1(input2)))
-    input3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    print("Steps " + str(my_stares.create_staircase1(input3)))
+    print("Steps " + str(my_stares.create_staircase1(input11)))
+    print("Steps " + str(my_stares.create_staircase1(input22)))
+    print("Steps " + str(my_stares.create_staircase1(input33)))
     print()
 
     print("create_staircase2")
-    input1 = [1, 2, 3, 4, 5, 6]
-    print("Steps " + str(my_stares.create_staircase2(input1)))
-    input2 = [1, 2, 3, 4, 5, 6, 7]
-    print("Steps " + str(my_stares.create_staircase2(input2)))
-    input3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    print("Steps " + str(my_stares.create_staircase2(input3)))
+    print("Steps " + str(my_stares.create_staircase2(input11)))
+    print("Steps " + str(my_stares.create_staircase2(input22)))
+    print("Steps " + str(my_stares.create_staircase2(input33)))
 
 
