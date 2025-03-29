@@ -1,4 +1,6 @@
 import urllib.request
+import ssl
+
 from enum import Enum
 
 url = "https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub"
@@ -21,6 +23,8 @@ class GRID:
 
 def read_url_connection():
     print("read_url_connection")
+    # Install Certificates.command or:
+    ssl._create_default_https_context = ssl._create_unverified_context
     f = urllib.request.urlopen(url)
     content_as_string = str(f.read())
     start = content_as_string.index(HTML.TABLE_B.value)
