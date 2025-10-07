@@ -15,6 +15,15 @@ def series():
 
 def data_frames():
     print("DataFrames")
+    data = {
+        "calories": [420, 380, 390],
+        "duration": [50, 40, 45]
+    }
+    # load data into a DataFrame object:
+    # pd.options.display.max_rows = 200
+    print('max_rows', str(pd.options.display.max_rows))
+    df = pd.DataFrame(data)
+    print(df)
 
 def read_csv():
     print("Read CSV")
@@ -61,6 +70,7 @@ def plotting():
 
 if __name__ == '__main__':
     series()
+    print()
     data_frames()
     read_csv()
     read_json()
