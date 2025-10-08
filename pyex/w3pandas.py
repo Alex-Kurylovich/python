@@ -12,6 +12,7 @@ def series():
     calories = {"day1": 420, "day2": 380, "day3": 390}
     myvar = pd.Series(calories, index=["day1", "day2"])
     print(myvar)
+    print()
 
 def data_frames():
     print("DataFrames")
@@ -19,11 +20,21 @@ def data_frames():
         "calories": [420, 380, 390],
         "duration": [50, 40, 45]
     }
-    # load data into a DataFrame object:
-    # pd.options.display.max_rows = 200
+    print("Load data into a DataFrame object")
     print('max_rows', str(pd.options.display.max_rows))
+    pd.options.display.max_rows = 200
     df = pd.DataFrame(data)
     print(df)
+    print("Refer to the row index")
+    print(df.loc[0])
+    print("Add a list of names to give each row a name")
+    data = {
+        "calories": [420, 380, 390],
+        "duration": [50, 40, 45]
+    }
+    df = pd.DataFrame(data, index=["day1", "day2", "day3"])
+    print(df)
+    print()
 
 def read_csv():
     print("Read CSV")
@@ -70,27 +81,16 @@ def plotting():
 
 if __name__ == '__main__':
     series()
-    print()
     data_frames()
-    print()
     read_csv()
-    print()
     read_json()
-    print()
     analyzing_data()
-    print()
     cleaning_data()
-    print()
     cleaning_empty_cells()
-    print()
     cleaning_wrong_format()
-    print()
     cleaning_wrong_data()
-    print()
     removing_duplicates()
-    print()
     correlations()
-    print()
     plotting()
 
 # pd.options.display.max_rows = 200
