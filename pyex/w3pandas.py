@@ -4,18 +4,18 @@ def series():
     print("Series")
     print("Create a simple Pandas Series from a list")
     a = [1, 7, 2]
-    myvar = pd.Series(a, index=["x", "y", "z"])
-    print(myvar)
+    ser = pd.Series(a, index=["x", "y", "z"])
+    print(ser)
     print("Return the first value of the Series")
-    print(myvar["y"])
+    print(ser["y"])
     print("Create your own labels")
     calories = {"day1": 420, "day2": 380, "day3": 390}
-    myvar = pd.Series(calories)
-    print(myvar)
+    ser = pd.Series(calories)
+    print(ser)
     print("Create a Series using only data from day1 and day2")
     calories = {"day1": 420, "day2": 380, "day3": 390}
-    myvar = pd.Series(calories, index=["day1", "day2"])
-    print(myvar)
+    ser = pd.Series(calories, index=["day1", "day2"])
+    print(ser)
     print()
 
 def data_frames():
