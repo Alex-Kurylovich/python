@@ -77,6 +77,19 @@ def cleaning_data():
     print("Replace NULL values with the number 130")
     print(df.fillna({"Calories": 130}, inplace=True))
     print(df)
+    print("Calculate the MEAN, and replace any empty values with it")
+    df = pd.read_csv('data.csv')
+    cal = df["Calories"].mean()
+    print(cal)
+    print(df.fillna({"Calories": cal}, inplace=True))
+    print(df)
+    print("Calculate the MODE, and replace any empty values with it")
+    df = pd.read_csv('data.csv')
+    mode = df["Calories"].mode()[0]
+    print(mode)
+    print(df.fillna({"Calories": mode}, inplace=True))
+    print(df)
+
     print()
 
 def cleaning_empty_cells():
