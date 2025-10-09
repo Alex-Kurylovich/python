@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def series():
     print("Series")
@@ -110,10 +111,15 @@ def removing_duplicates():
 
 def correlations():
     print("Pandas Correlations")
+    df = pd.read_csv('data.csv')
+    print(df.corr())
     print()
 
 def plotting():
     print("Pandas Plotting")
+    df = pd.read_csv('data.csv')
+    df.plot()
+    plt.show()
     print()
 
 # Quiz/Exercises
