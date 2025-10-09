@@ -31,6 +31,8 @@ def data_frames():
     print(df)
     print("Refer to the row index")
     print(df.loc[0])
+    print("Use a list of indexes")
+    print(df.loc[[0, 1]])
     print("Add a list of names to give each row a name")
     data = {
         "calories": [420, 380, 390],
@@ -38,6 +40,8 @@ def data_frames():
     }
     df = pd.DataFrame(data, index=["day1", "day2", "day3"])
     print(df)
+    print("Use the named index in the loc attribute to return the specified row(s)")
+    print(df.loc["day2"])
     print()
 
 def read_csv():
