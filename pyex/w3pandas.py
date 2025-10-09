@@ -69,6 +69,14 @@ def analyzing_data():
 
 def cleaning_data():
     print("Cleaning Data")
+    print("Return a new Data Frame with no empty cells")
+    df = pd.read_csv('data.csv')
+    print(df.dropna())
+    print("Return a new Data Frame with empty cells")
+    print(df[df.isnull().any(axis=1)])
+    print("Replace NULL values with the number 130")
+    print(df.fillna({"Calories": 130}, inplace=True))
+    print(df)
     print()
 
 def cleaning_empty_cells():
