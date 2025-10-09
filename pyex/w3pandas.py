@@ -94,14 +94,31 @@ def cleaning_data():
 
 def cleaning_wrong_format():
     print("Cleaning Wrong Format")
-    print()
+    # df = pd.read_csv('data.csv')
+    # df['Date'] = pd.to_datetime(df['Date'], format='mixed')
+    # print(df.to_string())
+    # print()
 
 def cleaning_wrong_data():
     print("Cleaning Wrong Data")
+    # df.loc[7, 'Duration'] = 45
+    print("Loop through all values in the Duration column")
+    # for x in df.index:
+    #     if df.loc[x, "Duration"] > 120:s
+    #         df.loc[x, "Duration"] = 120
+    print("Delete rows where Duration is higher than 120")
+    # for x in df.index:
+    #     if df.loc[x, "Duration"] > 120:
+    #         df.drop(x, inplace=True)
     print()
 
 def removing_duplicates():
     print("Removing Duplicates")
+    print("Duplicate rows are rows that have been registered more than one time")
+    # Returns True
+    # print(df.duplicated())
+    # Removing Duplicates
+    # df.drop_duplicates(inplace = True)
     print()
 
 def correlations():
