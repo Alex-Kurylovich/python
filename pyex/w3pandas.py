@@ -48,35 +48,52 @@ def read_csv():
     print("Read CSV")
     df = pd.read_csv('data.csv')
     print(df.info())
+    print()
 
 def read_json():
     print("Read JSON")
     df = pd.read_json('data.json')
     print(df.to_string())
+    print()
 
 def analyzing_data():
     print("Analyzing Data")
+    print("Get a quick overview by printing the first 10 rows of the DataFrame")
+    df = pd.read_csv('data.csv')
+    print(df.head(10))
+    print("Print the last 5 rows of the DataFrame")
+    print(df.tail())
+    print("Print information about the data")
+    print(df.info())
+    print()
 
 def cleaning_data():
     print("Cleaning Data")
+    print()
 
 def cleaning_empty_cells():
     print("Cleaning Empty Cells")
+    print()
 
 def cleaning_wrong_format():
     print("Cleaning Wrong Format")
+    print()
 
 def cleaning_wrong_data():
     print("Cleaning Wrong Data")
+    print()
 
 def removing_duplicates():
     print("Removing Duplicates")
+    print()
 
 def correlations():
     print("Pandas Correlations")
+    print()
 
 def plotting():
     print("Pandas Plotting")
+    print()
 
 # Quiz/Exercises
 # Pandas Editor
