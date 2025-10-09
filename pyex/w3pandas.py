@@ -122,15 +122,6 @@ def plotting():
     plt.show()
     print()
 
-# Quiz/Exercises
-# Pandas Editor
-# Pandas Quiz
-# Pandas Exercises
-# Pandas Syllabus
-# Pandas Study Plan
-# Pandas Certificate
-# DataFrames Reference
-
 if __name__ == '__main__':
     series()
     data_frames()
@@ -144,11 +135,5 @@ if __name__ == '__main__':
     removing_duplicates()
     correlations()
     plotting()
-
-# pd.options.display.max_rows = 200
-# df = pd.read_csv('data.csv')
-# print(pd.options.display.max_rows)
-# print(df.loc[[0, 1]])
-# print(df, end='\n\n')
 
 
