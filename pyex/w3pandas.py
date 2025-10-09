@@ -90,11 +90,6 @@ def cleaning_data():
     print(mode)
     print(df.fillna({"Calories": mode}, inplace=True))
     print(df)
-
-    print()
-
-def cleaning_empty_cells():
-    print("Cleaning Empty Cells")
     print()
 
 def cleaning_wrong_format():
@@ -129,7 +124,6 @@ if __name__ == '__main__':
     read_json()
     analyzing_data()
     cleaning_data()
-    cleaning_empty_cells()
     cleaning_wrong_format()
     cleaning_wrong_data()
     removing_duplicates()
