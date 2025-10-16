@@ -54,7 +54,8 @@ def read_csv():
 def read_json():
     print("Read JSON")
     df = pd.read_json('data.json')
-    print(df.to_string())
+    # print(df.to_string())
+    print(df.info())
     print()
 
 def analyzing_data():
@@ -72,24 +73,22 @@ def cleaning_data():
     print("Cleaning Data")
     print("Return a new Data Frame with no empty cells")
     df = pd.read_csv('data.csv')
-    print(df.dropna())
+    print(df.dropna().info())
     print("Return a new Data Frame with empty cells")
-    print(df[df.isnull().any(axis=1)])
+    print(df[df.isnull().any(axis=1)].info())
     print("Replace NULL values with the number 130")
     print(df.fillna({"Calories": 130}, inplace=True))
-    print(df)
+    print(df.loc[df['Calories'] == 130])
     print("Calculate the MEAN, and replace any empty values with it")
     df = pd.read_csv('data.csv')
     cal = df["Calories"].mean()
     print(cal)
     print(df.fillna({"Calories": cal}, inplace=True))
-    print(df)
     print("Calculate the MODE, and replace any empty values with it")
     df = pd.read_csv('data.csv')
     mode = df["Calories"].mode()[0]
     print(mode)
     print(df.fillna({"Calories": mode}, inplace=True))
-    print(df)
     print()
 
 def cleaning_wrong_format():
