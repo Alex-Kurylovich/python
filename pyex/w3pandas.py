@@ -84,11 +84,13 @@ def cleaning_data():
     cal = df["Calories"].mean()
     print(cal)
     print(df.fillna({"Calories": cal}, inplace=True))
+    print(df.loc[df['Calories'] == 375.79024390243904])
     print("Calculate the MODE, and replace any empty values with it")
     df = pd.read_csv('data.csv')
-    mode = df["Calories"].mode()[0]
+    mode = df["Calories"].mode()
     print(mode)
     print(df.fillna({"Calories": mode}, inplace=True))
+    print(df.loc[df['Calories'] == 300])
     print()
 
 def cleaning_wrong_format():
