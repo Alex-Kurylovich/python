@@ -54,14 +54,14 @@ def read_csv():
 def read_json():
     print("Read JSON")
     df = pd.read_json('data.json')
-    print(df.to_string())
+    print(df.head())
     print()
 
 def analyzing_data():
     print("Analyzing Data")
-    print("Get a quick overview by printing the first 10 rows of the DataFrame")
     df = pd.read_csv('data.csv')
-    print(df.head(10))
+    print("Get a quick overview by printing the first 5 rows of the DataFrame")
+    print(df.head())
     print("Print the last 5 rows of the DataFrame")
     print(df.tail())
     print("Print information about the data")
@@ -70,26 +70,26 @@ def analyzing_data():
 
 def cleaning_data():
     print("Cleaning Data")
-    print("Return a new Data Frame with no empty cells")
     df = pd.read_csv('data.csv')
-    print(df.dropna())
     print("Return a new Data Frame with empty cells")
-    print(df[df.isnull().any(axis=1)])
+    filtered_df_is_null = df[df['Calories'].isnull()]
+    print(filtered_df_is_null)
     print("Replace NULL values with the number 130")
-    print(df.fillna({"Calories": 130}, inplace=True))
-    print(df)
+    df = pd.read_csv('data.csv')
+    filtered_df_is_130 = filtered_df_is_null.fillna(130)
+    print(filtered_df_is_130)
     print("Calculate the MEAN, and replace any empty values with it")
     df = pd.read_csv('data.csv')
-    cal = df["Calories"].mean()
-    print(cal)
-    print(df.fillna({"Calories": cal}, inplace=True))
-    print(df)
+    mean = df["Calories"].mean()
+    print(mean)
+    filtered_df_is_mean = filtered_df_is_null.fillna(mean)
+    print(filtered_df_is_mean)
     print("Calculate the MODE, and replace any empty values with it")
     df = pd.read_csv('data.csv')
-    mode = df["Calories"].mode()[0]
+    mode = df["Calories"].mode()
     print(mode)
-    print(df.fillna({"Calories": mode}, inplace=True))
-    print(df)
+    filtered_df_is_mode = filtered_df_is_null.fillna(mode.iloc[0])
+    print(filtered_df_is_mode)
     print()
 
 def cleaning_wrong_format():
