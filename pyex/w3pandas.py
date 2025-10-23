@@ -93,32 +93,49 @@ def cleaning_data():
     print()
 
 def cleaning_wrong_format():
+    # The result from the converting in the example above gave us a NaT value,
+    # which can be handled as a NULL value,
+    # and we can remove the row by using the dropna() method.
     print("Cleaning Wrong Format")
-    # df = pd.read_csv('data.csv')
-    # df['Date'] = pd.to_datetime(df['Date'], format='mixed')
-    # print(df.to_string())
-    # print()
+    df = pd.read_csv('data_wrong.csv')
+    df['Date'] = pd.to_datetime(df['Date'], format='mixed')
+    print(df.to_string())
+    print()
 
 def cleaning_wrong_data():
     print("Cleaning Wrong Data")
-    # df.loc[7, 'Duration'] = 45
+    df = pd.read_csv('data_wrong.csv')
+    df.loc[7, 'Duration'] = 45
+    print(df.to_string())
+
     print("Loop through all values in the Duration column")
-    # for x in df.index:
-    #     if df.loc[x, "Duration"] > 120:s
-    #         df.loc[x, "Duration"] = 120
+    df = pd.read_csv('data_wrong.csv')
+    for x in df.index:
+        if df.loc[x, "Duration"] > 120:
+            df.loc[x, "Duration"] = 120
+    print(df.to_string())
+
     print("Delete rows where Duration is higher than 120")
-    # for x in df.index:
-    #     if df.loc[x, "Duration"] > 120:
-    #         df.drop(x, inplace=True)
+    df = pd.read_csv('data_wrong.csv')
+    for x in df.index:
+        if df.loc[x, "Duration"] > 120:
+            df.drop(x, inplace=True)
+    # remember to include the 'inplace = True' argument to make the changes
+    # in the original DataFrame object instead of returning a copy
+    print(df.to_string())
+
     print()
 
 def removing_duplicates():
     print("Removing Duplicates")
     print("Duplicate rows are rows that have been registered more than one time")
-    # Returns True
-    # print(df.duplicated())
+    df = pd.read_csv('data_wrong.csv')
+    print(df.duplicated())
     # Removing Duplicates
-    # df.drop_duplicates(inplace = True)
+    # Notice that row 12 has been removed from the result
+    df = pd.read_csv('data_wrong.csv')
+    df.drop_duplicates(inplace = True)
+    print(df.to_string())
     print()
 
 def correlations():
