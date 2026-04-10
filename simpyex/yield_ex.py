@@ -2,6 +2,7 @@
 # In yield keyword is used to create generators,
 # which are special types of iterators that allow values to be produced lazily, one at a time,
 # instead of returning them all at once.
+# https://www.geeksforgeeks.org/python/python-yield-keyword/
 
 class SimpleGenerator:
 
