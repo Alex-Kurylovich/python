@@ -77,6 +77,36 @@ class BooleanExpression:
     def run(self):
         print(sum(self.generator("geeks for geeks", "geeks")))
 
+y = 0
+
+class DefinitionAndUsage:
+    def generator(self):
+        global y
+        y = 10
+        yield "Hello"
+        y = 20
+        yield 51
+        y = 30
+        yield "Good Bye"
+
+    def run(self):
+        x = self.generator()
+        # The function is called:
+        # But y is still 0:
+        print("At this point, y is still:", y)
+        # Run the first iteration:
+        next(x)
+        # And y becomes 10:
+        print("Now, y is:", y)
+        # Run another iteration:
+        next(x)
+        # And y becomes 20:
+        print("Now, y is:", y)
+        # Run another iteration:
+        next(x)
+        # And y becomes 30:
+        print("Now, y is:", y)
+
 if __name__ == '__main__':
     print("Example1")
     example1 = SimpleGenerator()
@@ -94,6 +124,6 @@ if __name__ == '__main__':
     example4 = ExtractingEvenNumbers()
     example4.run()
 
-    print("Example5")
-    example5 = BooleanExpression()
-    example5.run()
+    print("Example6")
+    example6 = DefinitionAndUsage()
+    example6.run()
