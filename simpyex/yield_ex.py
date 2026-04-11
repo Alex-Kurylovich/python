@@ -80,6 +80,14 @@ class BooleanExpression:
 y = 0
 
 class DefinitionAndUsage:
+
+    # https://www.w3schools.com/python/ref_keyword_yield.asp
+    # The code inside the function is not executed when they are first called,
+    # but are divided into steps, one step for each yield,
+    # and each step is only executed when iterated upon.
+    # the code inside the function is not executed when calling the function,
+    # it is only executed when the returned iterator is iterated upon:
+
     def generator(self):
         global y
         y = 10
