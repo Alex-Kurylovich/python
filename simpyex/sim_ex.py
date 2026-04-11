@@ -1,5 +1,7 @@
 import simpy
 
+# A short example simulating two clocks ticking in different time intervals looks like this:
+
 def clock(env, name, tick):
     while True:
         print(name, env.now)
