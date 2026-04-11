@@ -1,5 +1,14 @@
 import simpy
 
+# you don’t want to wait until your electric vehicle is fully charged
+# but want to interrupt the charging process and just start driving instead.
+# the driver process has a reference to the car’s action process. After waiting for 3 time steps, it interrupts that process.
+#
+# Interrupts are thrown into process functions as Interrupt exceptions
+# that can (should) be handled by the interrupted process.
+# The process can then decide what to do next
+# (e.g., continuing to wait for the original event or yielding a new event):
+
 def driver(env, car):
     yield env.timeout(3)
     car.action.interrupt()
