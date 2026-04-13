@@ -11,6 +11,4 @@ def my_proc(env):
 
 env = simpy.Environment()
 p1 = env.process(my_proc(env))
-env.active_process  # None
 env.step()
-env.active_process  # None
