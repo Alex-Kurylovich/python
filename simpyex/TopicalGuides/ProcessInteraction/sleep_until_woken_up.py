@@ -8,6 +8,7 @@ import simpy
 # While the vehicle is driving,
 # the controller can be passive but needs to be reactivate
 # once the vehicle is connected to the power grid in order to charge the battery.
+# bat_ctrl() just waits for a normal event, we no longer call this pattern passivate / reactivate
 
 class EV:
     def __init__(self, env):
