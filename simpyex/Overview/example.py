@@ -1,3 +1,7 @@
+# SimPy is a process-based discrete-event simulation
+# Simulations can be performed “as fast as possible”,
+# in real time (wall clock time) or by manually stepping through the events.
+
 import simpy
 
 def clock(env, name, tick):
