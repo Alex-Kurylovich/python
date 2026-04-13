@@ -11,7 +11,10 @@ import simpy
 # You can call interrupt() on a Process.
 # This will throw an Interrupt exception into that process, resuming it immediately
 
-# What process.interrupt() actually does is scheduling an Interruption event for immediate execution. If this event is executed it will remove the victim process’ _resume() method from the callbacks of the event that it is currently waiting for (see target). Following that it will throw the Interrupt exception into the process.
+# What process.interrupt() actually does is scheduling an Interruption event for immediate execution.
+# If this event is executed it will remove the victim process’ _resume() method
+# from the callbacks of the event that it is currently waiting for (see target).
+# Following that it will throw the Interrupt exception into the process.
 #
 # Since we don’t do anything special to the original target event of the process,
 # the interrupted process can yield the same event again after catching the Interrupt –
