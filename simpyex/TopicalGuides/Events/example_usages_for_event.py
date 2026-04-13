@@ -1,5 +1,8 @@
 import simpy
 
+# One example for this is that events can be shared.
+# They can be created by a process or outside of the context of a process.
+# They can be passed to other processes and chained:
 
 class School:
     def __init__(self, env):
