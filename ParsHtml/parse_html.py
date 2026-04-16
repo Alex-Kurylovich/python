@@ -1,10 +1,12 @@
+
+# we use https://docs.python.org/3/library/html.parser.html
+
 import urllib.request
 import ssl
 from enum import Enum
+from html.parser import HTMLParser
 
 url = "file:///C:./features.html"
-
-from html.parser import HTMLParser
 
 class ColType(Enum):
     TH = "th"
