@@ -69,7 +69,7 @@ class MyHTMLParser(HTMLParser):
             self.data_expected = False
 
     def handle_data(self, data):
-        if self.data_expected == True:
+        if self.data_expected:
             print("Encountered some data:", data.splitlines())
             self.table.rows[-1].cols[-1].data = data
 
@@ -83,10 +83,13 @@ def read_and_parse_url_connection():
     parser.feed(content_as_string)
     return MyHTMLParser.table
 
-def print_table():
-    print("run print_table")
-    print(len(MyHTMLParser.table.rows))
+def print_table(table):
+     for r in table.rows:
+        print()
+        for c in r.cols:
+            if c.data != '':
+                print(c.data, end = ' ')
+
 
 if __name__ == '__main__':
-    read_and_parse_url_connection()
-    print_table()
+    print_table(read_and_parse_url_connection())
