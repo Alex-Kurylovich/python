@@ -11,8 +11,8 @@ class ColType(Enum):
     TD = "td"
 
 class Col:
-    def __init__(self, type=ColType.TD, data=''):
-        self. type = type
+    def __init__(self, ctype=ColType.TD, data=''):
+        self.type = ctype
         self.data = data
 
 class Row:
@@ -21,8 +21,8 @@ class Row:
             self.cols = []
         else:
             self.cols = cols
-    def addCol(self, type):
-        col = Col(type)
+    def addCol(self, ctype):
+        col = Col(ctype)
         self.cols.append(col)
 
 class Table:
@@ -32,8 +32,8 @@ class Table:
         else:
             self.rows = rows
     def addRow(self):
-        row = Row()
-        return self.rows.append(row)
+        r = Row()
+        return self.rows.append(r)
 
 class MyHTMLParser(HTMLParser):
 
@@ -41,7 +41,6 @@ class MyHTMLParser(HTMLParser):
     table = Table()
 
     def handle_starttag(self, tag, attrs):
-        global row
         if tag == 'table':
             print("Encountered a start tag:", tag)
         if tag == 'tr':
@@ -89,7 +88,6 @@ def print_table(table):
         for c in r.cols:
             if c.data != '':
                 print(c.data, end = ' ')
-
 
 if __name__ == '__main__':
     print_table(read_and_parse_url_connection())
