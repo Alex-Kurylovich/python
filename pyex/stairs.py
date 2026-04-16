@@ -67,5 +67,3 @@ if __name__ == '__main__':
     print("Steps " + str(get_staircase3(input11)))
     print("Steps " + str(get_staircase3(input22)))
     print("Steps " + str(get_staircase3(input33)))
-
-
